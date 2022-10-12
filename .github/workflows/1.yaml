@@ -11,4 +11,4 @@ jobs:
       - run: rm -rf .git
       - run: sudo apt install sshpass -y
       - run: sshpass -p "${{secrets.SSH_KEY}}" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ../test-actions hiweus@ssh-hiweus.alwaysdata.net:/home/hiweus/deploy
-      - run: sshpass -p "${{secrets.SSH_KEY}}" ssh hiweus@ssh-hiweus.alwaysdata.net sh -c "cd ~/deploy/test-action && npm ci"
+      - run: sshpass -p "${{secrets.SSH_KEY}}" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null hiweus@ssh-hiweus.alwaysdata.net sh -c "cd ~/deploy/test-action && npm ci"
