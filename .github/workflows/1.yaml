@@ -7,3 +7,4 @@ jobs:
       - run: ls -las
       - run: echo "=============================="
       - run: cd .. && ls -las
+      - run: ls -las
