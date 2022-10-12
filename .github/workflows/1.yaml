@@ -4,5 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: rm -rf .git && sudo apt install sshpass -y && cd .. && sshpass -p "${{secrets.SSH_KEY}}" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ../test-actions hiweus@ssh-hiweus.alwaysdata.net:/home/hiweus/deploy
+      - run: rm -rf .git
+      - run: sudo apt install sshpass -y
+      - run: sshpass -p "${{secrets.SSH_KEY}}" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ../test-actions hiweus@ssh-hiweus.alwaysdata.net:/home/hiweus/deploy
       
