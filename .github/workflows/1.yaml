@@ -4,7 +4,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ls -las
-      - run: echo "=============================="
-      - run: cd .. && ls -las
-      - run: ls -las
+      - run: cd .. && sshpass -p "${{secrets.SSH_KEY}}" scp -r ../test-actions hiweus@ssh-hiweus.alwaysdata.net:/home/hiweus/deploy
+      
