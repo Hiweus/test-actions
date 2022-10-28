@@ -6,8 +6,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: connect and run
-        uses: actions/checkout@v3
         run: |
           sudo apt install sshpass -y && 
           sshpass -p "${{secrets.SSH_KEY}}" scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ../test-actions hiweus@ssh-hiweus.alwaysdata.net:/home/hiweus/deploy &&
