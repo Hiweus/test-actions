@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Hiweus/test-actions/issues"
   },
-  "homepage": "https://github.com/Hiweus/test-actions#readme"
+  "homepage": "https://github.com/Hiweus/test-actions#readme",
+  "dependencies": {
+    "express": "*"
+  }
 }
